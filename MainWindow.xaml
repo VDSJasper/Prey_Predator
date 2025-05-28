@@ -7,6 +7,54 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Canvas HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="10"
+                Width="250"
+                Height="250"
+                Name="bugWorld">
+        </Canvas>
 
+        <Label
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="300,25"
+            Name="roundTextLabel"
+            Content="Round:"></Label>
+        <Label
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="300,125"
+            Name="ladybugTextLabel"
+            Content="Ladybugs:"></Label>
+        <Label
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="300,0,0,0"
+            Name="louseTextLabel"
+            Content="Lice:"></Label>
+
+        <Label
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="400,25"
+            Name="roundLabel"></Label>
+        <Label
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="400,125"
+            Name="ladybugLabel"></Label>
+        <Label
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="400,225"
+            Name="louseLabel"></Label>
+
+        <Button
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="300,300,0,0"
+            Name="roundButton"
+            Content="Next round" Click="roundButton_Click"></Button>
     </Grid>
 </Window>

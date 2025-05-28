@@ -46,15 +46,17 @@ namespace Prey_Predator
             int preyY;
             bool hasEaten = false;
 
-            foreach (Louse prey in allAnimals)
+            foreach (Animal prey in allAnimals)
             {
-                preyX = prey.Position.X;
-                preyY = prey.Position.Y;
-                double distance = Math.Sqrt(Math.Pow(predatorX - preyX, 2) + Math.Pow(predatorY - preyY, 2));
-                if (distance < 3)
+                if (prey is Louse)
                 {
-                    CanEat(prey);
-                    hasEaten = true;
+                    preyX = prey.Position.X;
+                    preyY = prey.Position.Y;
+                    double distance = Math.Sqrt(Math.Pow(predatorX - preyX, 2) + Math.Pow(predatorY - preyY, 2));
+                    if (distance < 3)
+                    {
+                        hasEaten = CanEat(prey);
+                    }
                 }
             }
 
