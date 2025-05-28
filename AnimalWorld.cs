@@ -21,16 +21,13 @@ namespace Prey_Predator
             _canvas = canvas;
             _allAnimals = new List<IAnimal>();
             AllAnimals = _allAnimals;
-            foreach (Animal animal in AllAnimals)
-            {
-                animal.DisplayOn(_canvas);
-            }
         }
 
         public void AddAnimal(IAnimal animal) 
         {
             AllAnimals.Add(animal);
             _allAnimals = AllAnimals;
+            animal.DisplayOn(_canvas);
         }
         public void ProcessRound()
         {
@@ -70,7 +67,6 @@ namespace Prey_Predator
             foreach (Animal baby in _babyAnimals)
             {
                 AddAnimal(baby);
-                baby.DisplayOn(_canvas);
             }
         }
     }

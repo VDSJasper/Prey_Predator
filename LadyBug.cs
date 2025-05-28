@@ -53,7 +53,7 @@ namespace Prey_Predator
                     preyX = prey.Position.X;
                     preyY = prey.Position.Y;
                     double distance = Math.Sqrt(Math.Pow(predatorX - preyX, 2) + Math.Pow(predatorY - preyY, 2));
-                    if (distance < 3)
+                    if ((distance < 3) && (_age != 0))
                     {
                         hasEaten = CanEat(prey);
                     }

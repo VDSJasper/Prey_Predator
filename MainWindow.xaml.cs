@@ -26,14 +26,15 @@ namespace Prey_Predator
             _insectWorld = new AnimalWorld(bugWorld);
             for (int i = 0; i < _startAmountLice; i++)
             {
-                Louse louce = new Louse();
-                _insectWorld.AddAnimal(louce);
+                Louse louse = new Louse();
+                _insectWorld.AddAnimal(louse);
                 if (i < _startAmountLadies)
                 { 
                     LadyBug lady = new LadyBug();
                     _insectWorld.AddAnimal(lady);
                 }
             }
+            DisplayStatistics();
         }
 
         private void roundButton_Click(object sender, RoutedEventArgs e)
