@@ -19,7 +19,8 @@ namespace Prey_Predator
         private int _maxAge;
         private SolidColorBrush _color;
         private Ellipse _animal;
-
+        private int _size = 5;
+        private int _distance = 10;
         private Canvas? Canvas { get; set; }
         protected Animal(int maxAge, SolidColorBrush color)
         {
@@ -28,8 +29,8 @@ namespace Prey_Predator
             _color = color;
             IsDead = false;
             Position _randomPosition = new Position();
-            _randomPosition.X = _random.Next(0, 16);
-            _randomPosition.Y = _random.Next(0, 16);
+            _randomPosition.X = _random.Next(_randomPosition.Range[0], _randomPosition.Range[1] + 1);
+            _randomPosition.Y = _random.Next(_randomPosition.Range[0], _randomPosition.Range[1] + 1);
             Position = _randomPosition;
         }
         protected Animal(int maxAge, SolidColorBrush color, Position position) : this(maxAge, color)
@@ -44,9 +45,9 @@ namespace Prey_Predator
         {
             Canvas = canvas;
             _animal.Fill = _color;
-            _animal.Margin = new Thickness(Position.X * 15, Position.Y * 15, 0, 0);
-            _animal.Width = 5;
-            _animal.Height = 5;
+            _animal.Margin = new Thickness(Position.X * _distance, Position.Y * _distance, 0, 0);
+            _animal.Width = _size;
+            _animal.Height = _size;
 
             Canvas.Children.Add(_animal);
         }
@@ -58,7 +59,7 @@ namespace Prey_Predator
 
         public void UpdateDisplay()
         {
-            _animal.Margin = new Thickness(Position.X * 15, Position.Y * 15, 0, 0);
+            _animal.Margin = new Thickness(Position.X * _distance, Position.Y * _distance, 0, 0);
         }
         public void Move()
         {

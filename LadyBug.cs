@@ -12,7 +12,11 @@ namespace Prey_Predator
     {
         private const int MaxAge = 16;
         private const int HatchTime = 4;
+        private const int MaxRoundsWithoutFood = 3;
+        private const int EatingDistance = 3;
+
         private int _roundsWithoutFood;
+
         public LadyBug() : base(MaxAge, new SolidColorBrush(Colors.Red)) 
         {
             
@@ -53,7 +57,7 @@ namespace Prey_Predator
                     preyX = prey.Position.X;
                     preyY = prey.Position.Y;
                     double distance = Math.Sqrt(Math.Pow(predatorX - preyX, 2) + Math.Pow(predatorY - preyY, 2));
-                    if ((distance < 3) && (_age != 0))
+                    if ((distance < EatingDistance) && (_age != 0))
                     {
                         hasEaten = CanEat(prey);
                     }
@@ -63,7 +67,7 @@ namespace Prey_Predator
             if (!hasEaten)
             {
                 _roundsWithoutFood++;
-                if (_roundsWithoutFood >= 3)
+                if (_roundsWithoutFood >= MaxRoundsWithoutFood)
                 { 
                     this.IsDead = true;
                 }

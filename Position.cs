@@ -13,6 +13,8 @@ namespace Prey_Predator
         public int X { get; set; }
         public int Y { get; set; }
 
+        public int[] Range { get => new int[] { MinValue, MaxValue };}
+
         public void MoveUp() 
         {
             if (X > MinValue)

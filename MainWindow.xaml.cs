@@ -18,17 +18,17 @@ namespace Prey_Predator
     public partial class MainWindow : Window
     {
         private IAnimalWorld _insectWorld;
-        private int _startAmountLice = 100;
-        private int _startAmountLadies = 10;
+        private const int StartAmountLice = 100;
+        private const int StartAmountLadies = 10;
         public MainWindow()
         {
             InitializeComponent();
             _insectWorld = new AnimalWorld(bugWorld);
-            for (int i = 0; i < _startAmountLice; i++)
+            for (int i = 0; i < StartAmountLice; i++)
             {
                 Louse louse = new Louse();
                 _insectWorld.AddAnimal(louse);
-                if (i < _startAmountLadies)
+                if (i < StartAmountLadies)
                 { 
                     LadyBug lady = new LadyBug();
                     _insectWorld.AddAnimal(lady);
